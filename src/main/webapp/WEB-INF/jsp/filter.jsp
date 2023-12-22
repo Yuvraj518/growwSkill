@@ -4,6 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Employee Filter</title>
+    <style>
+            input {
+                position: fixed;
+                left:200px;
+            }
+        </style>
 </head>
 <body>
     <h2>Employee Filter</h2>
@@ -18,8 +24,8 @@
         <label for="paginationLimit">Pagination Limit:</label>
         <input type="number" name="paginationLimit"><br>
 
-        <input style="margin-top:12px" type="submit" value="Filter">
+        <input style="margin-top:15px" type="submit" value="Filter">
     </form>
-    <button style="margin:10px;"><a href="/rr/all">Show list of Employees</a></button>
+    <button style="margin:40px;"><a href="/rr/all">Show list of Employees</a></button>
 </body>
 </html>

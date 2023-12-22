@@ -4,6 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Employee Registration</title>
+    <style>
+                input {
+                    position: fixed;
+                    left:200px;
+                }
+            </style>
 </head>
 <body>
     <h2>Employee Registration</h2>
@@ -31,10 +37,10 @@
         <input type="number" name="contactNumber" required><br>
 
         <label for="picture">Picture:</label>
-        <input type="file"  name="picture"><br>
+        <input type="file"  name="picture" required><br>
 
         <input style="margin-top:15px" type="submit" value="Register">
     </form>
-    <button style="margin:10px;"><a href="/rr/all">Show list of Employees</a></button>
+    <button style="margin:35px;"><a href="/rr/all">Show list of Employees</a></button>
 </body>
 </html>

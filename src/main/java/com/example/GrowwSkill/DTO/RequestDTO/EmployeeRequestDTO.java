@@ -28,15 +28,15 @@ public class EmployeeRequestDTO {
 //    public void setPicture(String picture) {
 //        this.picture = picture;
 //    }
-//        MultipartFile picture;
-//
-//    public MultipartFile getPicture() {
-//        return picture;
-//    }
-//
-//    public void setPicture(MultipartFile picture) {
-//        this.picture = picture;
-//    }
+    MultipartFile picture;
+
+    public MultipartFile getPicture() {
+        return picture;
+    }
+
+    public void setPicture(MultipartFile picture) {
+        this.picture = picture;
+    }
 
 
     public String getFirstName() {

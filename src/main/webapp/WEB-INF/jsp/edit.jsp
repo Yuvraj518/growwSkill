@@ -5,6 +5,12 @@
 <html>
 <head>
     <title>Employee Edit</title>
+    <style>
+                input,img {
+                    position: fixed;
+                    left:100px;
+                }
+            </style>
 </head>
 <body>
     <h1>Employee Edit</h1>
@@ -28,11 +34,15 @@
 
         <label for="email">Email:</label>
         <input type="email" name="emailId" value="${employeeResponseDTO.emailId}" required><br>
-
         <label for="mobile">Mobile:</label>
         <input type="number" name="contactNumber" value="${employeeResponseDTO.contactNumber}" required><br>
 
+        <label for="picture">Image:</label>
+        <img src="data:image/jpeg;base64,${employeeResponseDTO.picture}" alt="Employvv Picture" width="100"/><br><br><br>
+        <input type="file" name="picture"><br>
+
         <button type="submit">Update</button>
     </form>
+
 </body>
 </html>

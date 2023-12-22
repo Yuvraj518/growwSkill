@@ -1,6 +1,7 @@
 package com.example.GrowwSkill.controller;
 
 //import ch.qos.logback.core.model.Model;
+import com.example.GrowwSkill.DTO.ResponseDTO.EmployeeUpdateDTO;
 import org.springframework.ui.Model;
 import com.example.GrowwSkill.DTO.RequestDTO.EmployeeRequestDTO;
 import com.example.GrowwSkill.DTO.ResponseDTO.EmployeeResponseDTO;
@@ -23,13 +24,13 @@ public class EmployeeController {
 
     @GetMapping("/registration")
     public String registerPage() {
-        return "index";
+        return "register";
     }
 
     @PostMapping("/add")
     public String addEmployee(@ModelAttribute EmployeeRequestDTO employeeRequestDTO) throws IOException {
         boolean check=employeeService.addEmployee(employeeRequestDTO);
-        return "redirect:/rr/registration";
+        return "redirect:/rr/all";
     }
 
     @GetMapping("/all")
@@ -47,10 +48,10 @@ public class EmployeeController {
         return "edit";
     }
 
-    @PostMapping(value = "/update",consumes = "multipart/form-data")
-    public String updateEmployee(@RequestBody EmployeeResponseDTO employeeResponseDTO) throws Exception {
-        boolean check=employeeService.updateEmployee(employeeResponseDTO);
-        return "allEmployees";
+    @PostMapping(value = "/update")
+    public String updateEmployee(@ModelAttribute EmployeeUpdateDTO employeeUpdateDTO) throws Exception {
+        boolean check=employeeService.updateEmployee(employeeUpdateDTO);
+        return "redirect:/rr/all";
     }
     @GetMapping("/delete/{id}")
     public String deleteEmployee(@PathVariable int id){
@@ -66,12 +67,12 @@ public class EmployeeController {
                                   @RequestParam(name = "position", required = false) String position,
                                   @RequestParam(name = "paginationLimit", required = false) Integer paginationLimit,
                                   Model model) {
-        List<Employee> filteredEmployees = employeeService.filterEmployees(department, position, paginationLimit);
+        List<EmployeeResponseDTO> filteredEmployees = employeeService.filterEmployees(department, position, paginationLimit);
         model.addAttribute("getAllEmployees", filteredEmployees);
         return "allFilter";
     }
       @RequestMapping("*")
       public String handleUndefinedPath() {
-    return "errors";
+    return "errorPage";
 }
 }

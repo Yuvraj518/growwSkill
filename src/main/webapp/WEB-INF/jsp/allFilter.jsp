@@ -32,6 +32,7 @@
                 <th>Position</th>
                 <th>Email Address</th>
                 <th>Contact Number</th>
+                <th>Images</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -46,6 +47,7 @@
                     <td>${employee.position}</td>
                     <td>${employee.emailId}</td>
                     <td>${employee.contactNumber}</td>
+                    <td><img src="data:image/jpeg;base64,${employee.picture}" alt="Employvv Picture" width="100"/></td>
                     <td>
                         <a href="<c:url value='/rr/edit/' />${employee.id}">Edit</a>
                         |
@@ -56,8 +58,8 @@
         </tbody>
     </table>
 
-    <button><a href="/rr/registration"> Go to registration Page</a></button>
-        <button><a href="/rr/all"> Home</a></button>
+    <button style="margin:15px;"><a href="/rr/registration"> Go to registration Page</a></button>
+    <button style="margin:10px;"><a href="/rr/all"> Home</a></button>
 
 </body>
 </html>

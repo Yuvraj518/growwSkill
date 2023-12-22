@@ -21,16 +21,15 @@ public class EmployeeResponseDTO {
     String position;
     String emailId;
     String contactNumber;
-//    String picture;
-//    MultipartFile picture;
-//
-//    public MultipartFile getPicture() {
-//        return picture;
-//    }
-//
-//    public void setPicture(MultipartFile picture) {
-//        this.picture = picture;
-//    }
+    String picture;
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
 
     public int getId() {
         return id;

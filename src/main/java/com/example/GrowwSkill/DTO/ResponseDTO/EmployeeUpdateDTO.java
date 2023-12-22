@@ -1,20 +1,16 @@
-package com.example.GrowwSkill.modal;
+package com.example.GrowwSkill.DTO.ResponseDTO;
 
-import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
-
-@Entity
+import org.springframework.web.multipart.MultipartFile;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Employee {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class EmployeeUpdateDTO {
     int id;
     String firstName;
     String lastName;
@@ -23,18 +19,14 @@ public class Employee {
     String position;      // can be made a enum
     String emailId;
     String contactNumber;
-    @Lob
-    byte[] picture;
-    public byte[] getPicture() {
-    return picture;
-}
-
-    public void setPicture(byte[] picture) {
-        this.picture = picture;
-    }
+    MultipartFile picture;
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -91,5 +83,13 @@ public class Employee {
 
     public void setContactNumber(String contactNumber) {
         this.contactNumber = contactNumber;
+    }
+
+    public MultipartFile getPicture() {
+        return picture;
+    }
+
+    public void setPicture(MultipartFile picture) {
+        this.picture = picture;
     }
 }
