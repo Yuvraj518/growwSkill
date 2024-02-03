@@ -27,12 +27,12 @@
                 <th>ID</th>
                 <th>First Name</th>
                 <th>Last Name</th>
-                <th>Salary</th>
-                <th>Department</th>
-                <th>Position</th>
+                <th>Street</th>
+                <th>Addrees</th>
+                <th>City</th>
+                <th>State</th>
                 <th>Email Address</th>
                 <th>Contact Number</th>
-                <th>Images</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -42,12 +42,12 @@
                     <td>${employee.id}</td>
                     <td>${employee.firstName}</td>
                     <td>${employee.lastName}</td>
-                    <td>${employee.salary}</td>
-                    <td>${employee.department}</td>
-                    <td>${employee.position}</td>
+                    <td>${employee.street}</td>
+                    <td>${employee.address}</td>
+                    <td>${employee.city}</td>
+                    <td>${employee.state}</td>
                     <td>${employee.emailId}</td>
                     <td>${employee.contactNumber}</td>
-                    <td><img src="data:image/jpeg;base64,${employee.picture}" alt="Employvv Picture" width="100"/></td>
                     <td>
                         <a href="<c:url value='/rr/edit/' />${employee.id}">Edit</a>
                         |
